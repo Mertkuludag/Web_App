@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "Nokta",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Cevaplanma_Durumu": true, "Cevaplayan_Cinsiyet": "Erkek", "Tarih": "2022-02-18" }, "geometry": { "type": "Point", "coordinates": [ 32.792978123905243, 39.966964735496447 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Cevaplanma_Durumu": false, "Tarih": "2022-02-18" }, "geometry": { "type": "Point", "coordinates": [ 32.823069942887464, 39.927268103007918 ] } },
+{ "type": "Feature", "properties": { "id": 3, "Cevaplanma_Durumu": true, "Cevaplayan_Cinsiyet": "Kadin", "Tarih": "2022-02-18" }, "geometry": { "type": "Point", "coordinates": [ 32.871485192496237, 39.941846181078603 ] } },
+{ "type": "Feature", "properties": { "id": 4, "Cevaplanma_Durumu": false, "Tarih": "2022-02-18" }, "geometry": { "type": "Point", "coordinates": [ 32.892952331473708, 39.914175831685583 ] } },
+{ "type": "Feature", "properties": { "id": 5, "Cevaplanma_Durumu": false, "Tarih": "2022-02-22" }, "geometry": { "type": "Point", "coordinates": [ 32.868858893578789, 39.970642982561344 ] } },
+{ "type": "Feature", "properties": { "id": 6, "Cevaplanma_Durumu": true, "Cevaplayan_Cinsiyet": "Erkek", "Tarih": "2022-02-22" }, "geometry": { "type": "Point", "coordinates": [ 32.839627044758409, 39.976068377516704 ] } },
+{ "type": "Feature", "properties": { "id": 7, "Cevaplanma_Durumu": true, "Cevaplayan_Cinsiyet": "Erkek", "Tarih": "2022-02-23" }, "geometry": { "type": "Point", "coordinates": [ 32.857896950271147, 39.900949658859375 ] } },
+{ "type": "Feature", "properties": { "id": 8, "Cevaplanma_Durumu": false, "Tarih": "2022-02-23" }, "geometry": { "type": "Point", "coordinates": [ 32.837114932750403, 39.887983779873501 ] } },
+{ "type": "Feature", "properties": { "id": 9, "Cevaplanma_Durumu": true, "Cevaplayan_Cinsiyet": "Kadin", "Tarih": "2022-02-23" }, "geometry": { "type": "Point", "coordinates": [ 32.740969554989604, 39.974668316822331 ] } }
+]
+}
