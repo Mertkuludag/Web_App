@@ -184,25 +184,7 @@
                 fgpLyr = L.featureGroup([markerev]).addTo(mymap);
                 fgpDrawnItems = L.featureGroup().addTo(mymap);
 
-
-                //Kümeleşmiş Noktalar ve Ajax
-                lyrMarkerCluster = L.markerClusterGroup();
-
-                $.ajax({url:'load_Nokta.php',
-                    success:function(response){
-                        jsnAnkara = JSON.parse(response);
-                        lyrAnkara = L.geoJson(jsnAnkara, {pointToLayer: returnAnkaraNokta, filter: filterAnkara});
-                            
-                        lyrMarkerCluster.addLayer(lyrAnkara); 
-                        lyrMarkerCluster.addTo(mymap);
-                        ctlLayers.addOverlay(lyrMarkerCluster, 'Anket Noktalarını Gizle/Göster');
-                 },
-                    error:function(xhr, status, error){
-                        alert("ERROR: "+ error);
-                    }
-                });
-
-               
+                refreshAnkara();
 
                 objBasemaps = {
                     "OSM": lyrOSM,
@@ -401,11 +383,31 @@
             });
 
             $("input[name=fltAnkara]").click(function(){
-                arProjectIDs=[];
-                lyrAnkara.refresh();
+                refreshAnkara()
             });
 
+            function refreshAnkara(){
+            $.ajax({url:'load_Nokta.php',
+                    success:function(response){
+                        arProjectIDs=[];
+                        jsnAnkara = JSON.parse(response);
+                        if(lyrMarkerCluster){
+                            ctlLayers.removeLayer(lyrMarkerCluster);
+                            lyrMarkerCluster.remove();
+                        }
 
+                        lyrAnkara = L.geoJson(jsnAnkara, 
+                        {pointToLayer: returnAnkaraNokta, filter: filterAnkara});
+                        lyrMarkerCluster = L.markerClusterGroup();
+                        lyrMarkerCluster.addLayer(lyrAnkara); 
+                        lyrMarkerCluster.addTo(mymap);
+                        ctlLayers.addOverlay(lyrMarkerCluster, 'Anket Noktalarını Gizle/Göster');
+                 },
+                    error:function(xhr, status, error){
+                        alert("ERROR: "+ error);
+                    }
+                });
+            };
 
             /*
             //Filtreleyerek istenmeyenleri göstermeyebiliriz
